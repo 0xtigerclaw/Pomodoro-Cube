@@ -21,3 +21,10 @@ A unique productivity application featuring an interactive 3D Cube interface for
 *   SceneKit
 *   WidgetKit (Live Activities)
 *   WatchConnectivity
+
+## 📸 Screenshots
+
+| Main Interface | Live Activity | Home Widget |
+|:---:|:---:|:---:|
+| <img src="Screenshots/AppScreen.png" width="300"> | <img src="Screenshots/LiveActivity.png" width="300"> | <img src="Screenshots/HomeWidget.png" width="300"> |
+
