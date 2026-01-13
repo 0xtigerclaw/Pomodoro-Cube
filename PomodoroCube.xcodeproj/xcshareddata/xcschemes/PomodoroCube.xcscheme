@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C46F15982E79AE0E0010C83F"
-               BuildableName = "Test.app"
-               BlueprintName = "Test"
-               ReferencedContainer = "container:Test.xcodeproj">
+               BuildableName = "PomodoroCube.app"
+               BlueprintName = "PomodoroCube"
+               ReferencedContainer = "container:PomodoroCube.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C46F15982E79AE0E0010C83F"
-            BuildableName = "Test.app"
-            BlueprintName = "Test"
-            ReferencedContainer = "container:Test.xcodeproj">
+            BuildableName = "PomodoroCube.app"
+            BlueprintName = "PomodoroCube"
+            ReferencedContainer = "container:PomodoroCube.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C46F15982E79AE0E0010C83F"
-            BuildableName = "Test.app"
-            BlueprintName = "Test"
-            ReferencedContainer = "container:Test.xcodeproj">
+            BuildableName = "PomodoroCube.app"
+            BlueprintName = "PomodoroCube"
+            ReferencedContainer = "container:PomodoroCube.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

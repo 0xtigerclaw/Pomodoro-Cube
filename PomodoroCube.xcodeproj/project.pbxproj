@@ -66,7 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C439BA612F070CF400C653F6 /* Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		C439BA612F070CF400C653F6 /* PomodoroCube-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PomodoroCube-Bridging-Header.h"; sourceTree = "<group>"; };
 		C439BA622F070CF400C653F6 /* PomodoroCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCube.swift; sourceTree = "<group>"; };
 		C439BA642F070E3500C653F6 /* PomodoroCubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCubeApp.swift; sourceTree = "<group>"; };
 		C439BA662F070E5E00C653F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,14 +75,14 @@
 		C439BA702F085FE100C653F6 /* Pomodoro CubeExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Pomodoro CubeExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C439BA722F085FE100C653F6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		C439BA742F085FE100C653F6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		C439BA8C2F0860A200C653F6 /* Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test.entitlements; sourceTree = "<group>"; };
+		C439BA8C2F0860A200C653F6 /* PomodoroCube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroCube.entitlements; sourceTree = "<group>"; };
 		C439BA8D2F08621500C653F6 /* Pomodoro CubeExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pomodoro CubeExtension.entitlements"; sourceTree = "<group>"; };
 		C439BAA02F0864A300C653F6 /* SharedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		C439BAA82F086D8A00C653F6 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
-		C439BAAF2F0871EE00C653F6 /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		C439BAAF2F0871EE00C653F6 /* PomodoroCube-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PomodoroCube-Info.plist"; sourceTree = "<group>"; };
 		C450A0D62F09C5B100124002 /* PomodoroCubeWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PomodoroCubeWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C450A0E72F09C9C900124002 /* PhoneConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectivity.swift; sourceTree = "<group>"; };
-		C46F15992E79AE0E0010C83F /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46F15992E79AE0E0010C83F /* PomodoroCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -93,12 +93,12 @@
 			);
 			target = C439BA6F2F085FE100C653F6 /* Pomodoro CubeExtension */;
 		};
-		C439BAB12F0872BE00C653F6 /* Exceptions for "Pomodoro Cube" folder in "Test" target */ = {
+		C439BAB12F0872BE00C653F6 /* Exceptions for "Pomodoro Cube" folder in "PomodoroCube" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				PomodoroAttributes.swift,
 			);
-			target = C46F15982E79AE0E0010C83F /* Test */;
+			target = C46F15982E79AE0E0010C83F /* PomodoroCube */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -106,7 +106,7 @@
 		C439BA762F085FE100C653F6 /* Pomodoro Cube */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				C439BAB12F0872BE00C653F6 /* Exceptions for "Pomodoro Cube" folder in "Test" target */,
+				C439BAB12F0872BE00C653F6 /* Exceptions for "Pomodoro Cube" folder in "PomodoroCube" target */,
 				C439BA8A2F085FE300C653F6 /* Exceptions for "Pomodoro Cube" folder in "Pomodoro CubeExtension" target */,
 			);
 			path = "Pomodoro Cube";
@@ -158,18 +158,18 @@
 		C46F15902E79AE0E0010C83F = {
 			isa = PBXGroup;
 			children = (
-				C439BAAF2F0871EE00C653F6 /* Test-Info.plist */,
+				C439BAAF2F0871EE00C653F6 /* PomodoroCube-Info.plist */,
 				C439BAA82F086D8A00C653F6 /* HapticManager.swift */,
 				C439BAA02F0864A300C653F6 /* SharedDataManager.swift */,
 				C439BA8D2F08621500C653F6 /* Pomodoro CubeExtension.entitlements */,
-				C439BA8C2F0860A200C653F6 /* Test.entitlements */,
+				C439BA8C2F0860A200C653F6 /* PomodoroCube.entitlements */,
 				C450A0E72F09C9C900124002 /* PhoneConnectivity.swift */,
 				C439BA622F070CF400C653F6 /* PomodoroCube.swift */,
 				C439BA762F085FE100C653F6 /* Pomodoro Cube */,
 				C450A0D72F09C5B100124002 /* PomodoroCubeWatch Watch App */,
 				C439BA712F085FE100C653F6 /* Frameworks */,
 				C46F159A2E79AE0E0010C83F /* Products */,
-				C439BA612F070CF400C653F6 /* Test-Bridging-Header.h */,
+				C439BA612F070CF400C653F6 /* PomodoroCube-Bridging-Header.h */,
 				C439BA642F070E3500C653F6 /* PomodoroCubeApp.swift */,
 				C439BA662F070E5E00C653F6 /* ContentView.swift */,
 				C439BA682F070EA600C653F6 /* CubeView.swift */,
@@ -180,7 +180,7 @@
 		C46F159A2E79AE0E0010C83F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C46F15992E79AE0E0010C83F /* Test.app */,
+				C46F15992E79AE0E0010C83F /* PomodoroCube.app */,
 				C439BA702F085FE100C653F6 /* Pomodoro CubeExtension.appex */,
 				C450A0D62F09C5B100124002 /* PomodoroCubeWatch Watch App.app */,
 			);
@@ -234,9 +234,9 @@
 			productReference = C450A0D62F09C5B100124002 /* PomodoroCubeWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C46F15982E79AE0E0010C83F /* Test */ = {
+		C46F15982E79AE0E0010C83F /* PomodoroCube */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C46F15A42E79AE0F0010C83F /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = C46F15A42E79AE0F0010C83F /* Build configuration list for PBXNativeTarget "PomodoroCube" */;
 			buildPhases = (
 				C46F15952E79AE0E0010C83F /* Sources */,
 				C46F15962E79AE0E0010C83F /* Frameworks */,
@@ -250,11 +250,11 @@
 				C439BA852F085FE300C653F6 /* PBXTargetDependency */,
 				C450A0DF2F09C5B300124002 /* PBXTargetDependency */,
 			);
-			name = Test;
+			name = PomodoroCube;
 			packageProductDependencies = (
 			);
-			productName = Test;
-			productReference = C46F15992E79AE0E0010C83F /* Test.app */;
+			productName = PomodoroCube;
+			productReference = C46F15992E79AE0E0010C83F /* PomodoroCube.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C46F15942E79AE0E0010C83F /* Build configuration list for PBXProject "Test" */;
+			buildConfigurationList = C46F15942E79AE0E0010C83F /* Build configuration list for PBXProject "PomodoroCube" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -293,7 +293,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C46F15982E79AE0E0010C83F /* Test */,
+				C46F15982E79AE0E0010C83F /* PomodoroCube */,
 				C439BA6F2F085FE100C653F6 /* Pomodoro CubeExtension */,
 				C450A0D52F09C5B100124002 /* PomodoroCubeWatch Watch App */,
 			);
@@ -628,7 +628,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Test.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PomodoroCube.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
@@ -636,7 +636,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Test-Info.plist";
+				INFOPLIST_FILE = "PomodoroCube-Info.plist";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -662,7 +662,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Test-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PomodoroCube-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -677,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Test.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PomodoroCube.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -685,7 +685,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Test-Info.plist";
+				INFOPLIST_FILE = "PomodoroCube-Info.plist";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -711,7 +711,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Test-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PomodoroCube-Bridging-Header.h";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
@@ -740,7 +740,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C46F15942E79AE0E0010C83F /* Build configuration list for PBXProject "Test" */ = {
+		C46F15942E79AE0E0010C83F /* Build configuration list for PBXProject "PomodoroCube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C46F15A22E79AE0F0010C83F /* Debug */,
@@ -749,7 +749,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C46F15A42E79AE0F0010C83F /* Build configuration list for PBXNativeTarget "Test" */ = {
+		C46F15A42E79AE0F0010C83F /* Build configuration list for PBXNativeTarget "PomodoroCube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C46F15A52E79AE0F0010C83F /* Debug */,
