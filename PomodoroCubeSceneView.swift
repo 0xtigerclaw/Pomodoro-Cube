@@ -3,6 +3,8 @@
 // Visuals: Dark Tech Aesthetic (Black Glossy Body, Digital Display)
 // PERFORMANCE OPTIMIZED: Texture caching + throttled updates
 
+#if canImport(UIKit)
+
 import SwiftUI
 import SceneKit
 import UIKit
@@ -608,3 +610,22 @@ private extension SCNNode {
         return worldOrientation.act(localForward)
     }
 }
+#else
+import SwiftUI
+
+struct PomodoroCubeSceneView: View {
+    @ObservedObject var cube: PomodoroCube
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 24, style: .continuous)
+            .fill(Color.gray.opacity(0.15))
+            .overlay(
+                Text("3D cube preview is available on iOS.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding()
+            )
+    }
+}
+#endif

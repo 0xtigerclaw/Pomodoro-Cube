@@ -5,6 +5,7 @@
 //  Created by Swayam Shah on 02/01/2026.
 //
 
+#if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
 import ActivityKit
 import WidgetKit
 import SwiftUI
@@ -78,3 +79,4 @@ extension Pomodoro_CubeAttributes.ContentState {
     Pomodoro_CubeAttributes.ContentState.smiley
     Pomodoro_CubeAttributes.ContentState.starEyes
 }
+#endif

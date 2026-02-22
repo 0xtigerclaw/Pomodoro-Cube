@@ -243,9 +243,17 @@ struct CubeView: View {
             }
 
             // 3D Liquid Glass Cube Faces
+            #if os(iOS)
             PomodoroCubeSceneView(cube: cube)
                 .frame(height: 350) // SceneKit needs explicit frame often, or at least helpful
                 .padding(.horizontal)
+            #else
+            RoundedRectangle(cornerRadius: 24)
+                .fill(Color.gray.opacity(0.2))
+                .frame(height: 350)
+                .overlay(Text("3D View Not Available").foregroundStyle(.secondary))
+                .padding(.horizontal)
+            #endif
 
             if let face = cube.currentFace {
                 VStack(spacing: 4) {
@@ -378,7 +386,9 @@ struct CubeView: View {
                         Text("\(min) min").tag(min)
                     }
                 }
+                #if os(iOS)
                 .pickerStyle(.wheel)
+                #endif
                 .frame(height: 150)
                 
                 Button("Start Timer") {

@@ -7,7 +7,9 @@
 
 import Foundation
 import WidgetKit
+#if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
 import ActivityKit // For Live Activities
+#endif
 
 class SharedDataManager {
     // Singleton
@@ -21,7 +23,10 @@ class SharedDataManager {
     private let keyTimerState = "timerState" // "running", "paused", "idle"
     
     // Hold reference to current activity
+    #if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
+    @available(iOS 16.1, *)
     private var currentActivity: Activity<PomodoroAttributes>?
+    #endif
     
     private var userDefaults: UserDefaults? {
         return UserDefaults(suiteName: suiteName)
@@ -30,8 +35,6 @@ class SharedDataManager {
     private let keyLastConfiguredDuration = "lastConfiguredDuration"
 
     private init() {}
-    
-    // MARK: - Write State
     
     // MARK: - Write State
     
@@ -56,11 +59,15 @@ class SharedDataManager {
         // Tell Widget to refresh
         WidgetCenter.shared.reloadAllTimelines()
         
+        #if canImport(WatchConnectivity)
         // Send to Watch
         AppPhoneConnectivity.shared.sendState(endDate: endDate, duration: duration, state: "running", remaining: nil as TimeInterval?)
+        #endif
         
         // Start Live Activity
+        #if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
         await startLiveActivity(endDate: endDate)
+        #endif
     }
     
     func pauseTimer() async {
@@ -74,8 +81,10 @@ class SharedDataManager {
             userDefaults?.set("paused", forKey: keyTimerState)
             userDefaults?.removeObject(forKey: keyTimerEndDate) // No end date while paused
             
+            #if canImport(WatchConnectivity)
             // Send to Watch
             AppPhoneConnectivity.shared.sendState(endDate: nil as Date?, duration: (userDefaults?.object(forKey: keyOriginalDuration) as? Double), state: "paused", remaining: remaining)
+            #endif
             
         } else {
             await stopTimer() // It already finished
@@ -84,7 +93,9 @@ class SharedDataManager {
         
         userDefaults?.synchronize()
         WidgetCenter.shared.reloadAllTimelines()
+        #if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
         await stopLiveActivity() // Live Activities don't support "paused" well, usually we stop or show static state
+        #endif
     }
     
     func resumeTimer() async {
@@ -111,14 +122,38 @@ class SharedDataManager {
         userDefaults?.synchronize()
         WidgetCenter.shared.reloadAllTimelines()
         
+        #if canImport(WatchConnectivity)
         // Send to Watch
         AppPhoneConnectivity.shared.sendState(endDate: nil as Date?, duration: nil as TimeInterval?, state: "idle", remaining: nil as TimeInterval?)
+        #endif
         
         // Stop Live Activity
+        #if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
         await stopLiveActivity()
+        #endif
     }
     
-    // MARK: - Live Activity Logic
+    // MARK: - Read State
+    
+    func getTimerState() -> (endDate: Date?, originalDuration: TimeInterval?, state: String, remaining: TimeInterval?) {
+        let endDate = userDefaults?.object(forKey: keyTimerEndDate) as? Date
+        let duration = userDefaults?.double(forKey: keyOriginalDuration)
+        let remaining = userDefaults?.object(forKey: keyRemainingDuration) as? Double
+        let state = userDefaults?.string(forKey: keyTimerState) ?? "idle"
+        
+        // Validation: If end date is past, we are conceptually "idle" or "finished"
+        // Exception: If we have a 'remaining' value, we are likely 'paused' which is valid
+        if let limit = endDate, Date() > limit, remaining == nil {
+             return (limit, duration, "idle", nil)
+        }
+        
+        return (endDate, duration, state, remaining)
+    }
+}
+
+#if canImport(ActivityKit) && os(iOS) && !targetEnvironment(macCatalyst)
+extension SharedDataManager {
+    @available(iOS 16.1, *)
     private func startLiveActivity(endDate: Date) async {
         // Need to check if ActivityKit is supported (it is on recent iOS)
         guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
@@ -141,6 +176,7 @@ class SharedDataManager {
         }
     }
     
+    @available(iOS 16.1, *)
     private func stopLiveActivity() async {
         // Iterate all activities (Cross-Process safe)
         for activity in Activity<PomodoroAttributes>.activities {
@@ -148,24 +184,5 @@ class SharedDataManager {
         }
         self.currentActivity = nil
     }
-
-    
-    // MARK: - Read State
-    
-    func getTimerState() -> (endDate: Date?, originalDuration: TimeInterval?, state: String, remaining: TimeInterval?) {
-        let endDate = userDefaults?.object(forKey: keyTimerEndDate) as? Date
-        let duration = userDefaults?.double(forKey: keyOriginalDuration)
-        let remaining = userDefaults?.object(forKey: keyRemainingDuration) as? Double
-        let state = userDefaults?.string(forKey: keyTimerState) ?? "idle"
-        
-        // Validation: If end date is past, we are conceptually "idle" or "finished"
-        // Exception: If we have a 'remaining' value, we are likely 'paused' which is valid
-        if let limit = endDate, Date() > limit, remaining == nil {
-             return (limit, duration, "idle", nil)
-        }
-        
-        return (endDate, duration, state, remaining)
-    }
 }
-
-
+#endif

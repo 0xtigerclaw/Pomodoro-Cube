@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+#if canImport(WatchConnectivity)
 import WatchConnectivity
 
 class AppPhoneConnectivity: NSObject, WCSessionDelegate {
@@ -56,3 +58,4 @@ class AppPhoneConnectivity: NSObject, WCSessionDelegate {
         WCSession.default.activate()
     }
 }
+#endif

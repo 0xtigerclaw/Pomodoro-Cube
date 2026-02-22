@@ -1,10 +1,4 @@
-//
-//  HapticManager.swift
-//  Test
-//
-//  Created by Swayam Shah on 02/01/2026.
-//
-
+#if canImport(UIKit)
 import UIKit
 import AudioToolbox
 
@@ -61,3 +55,18 @@ class HapticManager {
         }
     }
 }
+#endif
+#if !canImport(UIKit)
+class HapticManager {
+    static let shared = HapticManager()
+
+    private init() {}
+
+    func playClick() {}
+    func playThud() {}
+    func playLightTap() {}
+    func playSuccess() {}
+    func playError() {}
+    func playSound(named name: String) {}
+}
+#endif
